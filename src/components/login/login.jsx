@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Footer from '../footer/footer';
 import Header from '../header/header';
 import styles from './login.module.css';
 
 const Login = ({authService}) => {
+    const navigate = useNavigate();
+    const goToMaker = (userIde) => {
+        navigate({
+            pathname: '/maker',
+            state: {id: userIde}
+        });
+    };
+
     const onLogin = (event) => {
         authService
         .login(event.currentTarget.textContent)
-        .then(console.log);
-    }
+        .then(data => goToMaker(data.user.uid));
+    };
+
+    useEffect(() => {
+        authService
+        .onAuthChage(user => {
+            user && goToMaker(user.uid)
+        })
+    })
   return (
     <section className={styles.login}>
         <Header />
@@ -28,4 +44,4 @@ const Login = ({authService}) => {
   )
 }
 
-export default Login
+export default Login;
