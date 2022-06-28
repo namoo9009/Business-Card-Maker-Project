@@ -1,8 +1,9 @@
-@value makerGreen from '../../common/colors.css';
+@value makerGreen, makerLightGrey from '../../common/colors.css';
 
 .editor {
+    padding: 0.5em 2em;
     flex-basis: 50%;
-    background-color: pink;
+    border-right: 1px solid makerLightGrey;
 }
 
 .title {
@@ -10,5 +11,4 @@
     text-align: center;
     margin: 1em 0;
     color: makerGreen;
-    font-weight: bold;
 }

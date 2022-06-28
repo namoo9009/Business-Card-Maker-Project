@@ -1,0 +1,64 @@
+@value makerBlack, makerWhite, makerColorful, makerWheat, makerShadow from '../../common/colors.css';
+
+.card {
+    display: flex;
+    align-items: center;
+    margin: 0.5em auto;
+    padding: 0.2em 0;
+    max-width: 30rem;
+    background-color: yellow;
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+    box-shadow: 3px 3px 10px 0px makerShadow;
+}
+.card.dark {
+    background-color: makerBlack;
+    color: makerWhite;
+}
+.card.light {
+    background-color: makerWhite;
+    color: makerBlack;
+}
+.card.colorful {
+    background: makerColorful;
+}
+.avatar {
+    width: 10em;
+    height: 10em;
+    padding: 1em;
+    margin-left: 0.5em;
+    margin-right: 1em;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.info {
+    width: 100%;
+}
+.info>*{
+    font-size: 0.8rem;
+    margin-bottom: 0.2em;
+}
+.name {
+    font-size: 1.2rem;
+}
+.company {
+    margin-bottom: 1em;
+}
+.company::after {
+    content: '';
+    display: block;
+    width: 90%;
+    height: 1px;
+    background-color: makerWheat;
+    transform: translateY(0.5em);
+    -webkit-transform: translateY(0.5em);
+    -moz-transform: translateY(0.5em);
+    -ms-transform: translateY(0.5em);
+    -o-transform: translateY(0.5em);
+}
